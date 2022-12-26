@@ -2,7 +2,7 @@
   "name": "grafana-json-datasource",
   "description": "Grafana JSON datasource",
   "main": "index.js",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "scripts": {
     "build": "grafana-toolkit plugin:build",
     "test": "grafana-toolkit plugin:test",
@@ -11,6 +11,7 @@
     "sign": "grafana-toolkit plugin:sign",
     "build-sign-release": "yarn run build && yarn run sign && yarn run package",
     "package": "cp -r dist/ simpod-json-datasource && zip simpod-json-datasource.zip simpod-json-datasource -r && rm -rfd simpod-json-datasource",
+    "release:minor": "npm version minor && yarn run build-sign-release",
     "release:patch": "npm version patch && yarn run build-sign-release",
     "eslint:check": "eslint src spec --ext .tsx,.ts",
     "eslint:fix": "yarn run eslint:check --fix",
@@ -19,28 +20,28 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/simPod/grafana-json-datasource.git"
+    "url": "git+https://github.com:simPod/GrafanaJsonDatasource.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/simPod/grafana-json-datasource/issues"
+    "url": "https://github.com/simPod/GrafanaJsonDatasource/issues"
   },
   "devDependencies": {
-    "@grafana/data": "8.5.6",
-    "@grafana/eslint-config": "3.0.0",
-    "@grafana/runtime": "8.3.4",
-    "@grafana/toolkit": "8.5.6",
-    "@grafana/ui": "8.5.6",
+    "@grafana/data": "^9.0.0",
+    "@grafana/eslint-config": "^5.0.0",
+    "@grafana/runtime": "^9.0.0",
+    "@grafana/toolkit": "^9.0.0",
+    "@grafana/ui": "^9.0.0",
     "@types/lodash": "^4.14.176",
     "@types/react-virtualized-auto-sizer": "^1.0.0"
   },
   "dependencies": {
     "lodash": "^4.17.21",
     "react-virtualized-auto-sizer": "^1.0.5",
-    "rxjs": "7.3.0"
+    "rxjs": "^7.5.5"
   },
-  "homepage": "https://github.com/simPod/grafana-json-datasource#readme",
+  "homepage": "https://github.com/simPod/GrafanaJsonDatasource",
   "engineStrict": true,
   "nodeLinker": "node-modules",
-  "packageManager": "yarn@3.2.1"
+  "packageManager": "yarn@3.2.4"
 }
